@@ -1,16 +1,142 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html>
 
 <head>
 	<link rel="stylesheet" href="styles.css">
 </head>
+	<style>
+		#existing{
+			display:none
+		}
+	</style>
+
+<body>
+
+	<h1>Login Form</h1>
+	<form id ="form">
+	<input type = "text" placeholder="Username" id = "username"><br><br>
+	<input type = "password" placeholder = "password" id="password"><br><br>
+	<input type = "checkbox" id = "checkbox">
+	<lable for = "checkbox">Remember me</lable><br><br>
+	<input type = "submit" id = "submit" value = "Submit"><br><br>
+	<input type = "button" id = "existing" value = "Login as existing user">
+	</form>
+	the entire body must be written by student
+    <script>
+		let form = document.getElementById ("form")
+	     let existing = document.getElementById ("existing")
+		form.addEventListener("submit",(e) =>{
+			e.preventDefault()
+			let check = document.getElementById ("checkbox")
+			let username = document.getElementById ("username").value
+            let pass = document.getElementById("password").value
+			if(username && pass){
+                alert(`Logged in as ${username}` )
+				
+			}
+			else{
+				alert("Kindly fill details")
+			}
+			if(check.checked){
+				localStorage.setItem ("id" , username)
+				localStorage.setItem ("pass" , pass)
+			}
+			if(!check.checked){
+				localStorage.removeItem(id);
+				localStorage.removeItem(pass);
+			}
+			if( localStorage.getItem('id') && localStorage.getItem('pass') ){
+				existing.style.display ="block"
+			}
+			
+        })
+</script>
+
+</body>
+
+</html>
+ -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="styles.css">
+	
+</head>
 
 <body>
 	<!-- the entire body must be written by student -->
+	 <div class="login-container">
+        <h1>Login Form</h1>
+        <form id="loginForm">
+            <!-- Username Field -->
+             <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Username" required>
+
+            <!-- Password Field -->
+             <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password" required>
+
+            <!-- Remember Me Checkbox -->
+            <div>
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">Remember me:</label>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" id="submit" value="Submit">
+
+            <!-- Existing User Login Button -->
+            <button type="button" id="existing">Login as existing user</button>
+        </form>
+    </div>
     <script type="text/javascript" src="./script.js">
 </script>
 
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
