@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	
-   <style>
-        /* Basic styling for the form */
+    <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-			flex-direction:column;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -49,7 +45,7 @@
             color: #555;
         }
 
-        input[type="submit"],#existing {
+        input[type="submit"], #existing {
             width: 100%;
             padding: 10px;
             background: #007bff;
@@ -75,18 +71,16 @@
         }
     </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	 <div class="login-container">
+    <div class="login-container">
         <h1>Login Form</h1>
         <form id="loginForm">
             <!-- Username Field -->
-             <label for="username">Username:</label>
+            <label for="username">Username:</label>
             <input type="text" id="username" placeholder="Username" required>
 
             <!-- Password Field -->
-             <label for="password">Password:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" placeholder="Password" required>
 
             <!-- Remember Me Checkbox -->
@@ -103,8 +97,6 @@
         </form>
     </div>
     <script>
-        //your JS code here. If required.
-
         // Check if credentials are saved in localStorage
         const savedUsername = localStorage.getItem("username");
         const savedPassword = localStorage.getItem("password");
@@ -115,7 +107,7 @@
         }
 
         // Handle form submission
-        document.getElementById("loginForm").addEventListener("submit", function (e) {
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
             e.preventDefault();
 
             const username = document.getElementById("username").value;
@@ -132,11 +124,11 @@
                 localStorage.removeItem("password");
             }
 
-            alert(Logged in as ${username});
+            alert("Logged in as " + username);
         });
 
         // Handle "Login as existing user" button click
-        document.getElementById("existing").addEventListener("click", function () {
+        document.getElementById("existing").addEventListener("click", function() {
             const savedUsername = localStorage.getItem("username");
             const savedPassword = localStorage.getItem("password");
 
@@ -144,13 +136,11 @@
                 // Auto-fill the form
                 document.getElementById("username").value = savedUsername;
                 document.getElementById("password").value = savedPassword;
-                alert(Logged in as ${savedUsername});
+                alert("Logged in as " + savedUsername);
             } else {
                 alert("No saved credentials found.");
             }
         });
-</script>
-
+    </script>
 </body>
-
 </html>
